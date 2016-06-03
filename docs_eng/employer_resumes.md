@@ -311,7 +311,10 @@ When the authorized user is an applicant or anonymous, a `403` error will return
             },
             "owner": {
                 "comments": {
-                    "url": "https://api.hh.ru/applicant_comments/123456"
+                    "url": "https://api.hh.ru/applicant_comments/123456",
+                    "counters": {
+                      "total": 7
+                    }
                 }
             }
         }

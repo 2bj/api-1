@@ -321,7 +321,10 @@ will have `false` value.
     },
     "owner": {
         "comments": {
-            "url": "https://api.hh.ru/applicant_comments/123456"
+            "url": "https://api.hh.ru/applicant_comments/123456",
+            "counters": {
+              "total": 7
+            }
         }
     },
     "can_view_full_info": true,
