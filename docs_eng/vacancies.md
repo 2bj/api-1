@@ -10,6 +10,7 @@
 * [Vacancy fields conditions](#conditions)
 * [Vacancy editing](#edit)
 * [Vacancy prolongation](#prolongate)
+* [Similar vacancies](#similar)
 
 
 <a name="item"></a>
@@ -287,6 +288,7 @@ successfully, the method returns `204 No Content`.
 
 `GET /vacancies` will return the results of vacancy search.
 
+<a name="search-params"></a>
 Acceptable parameters:
 
 Some parameters take multiple values: `key=value&key=value`.
@@ -386,6 +388,7 @@ Some parameters take multiple values: `key=value&key=value`.
 * `clusters` – whether the cluster list should be returned for this search,
   by default: `false`. More information on this [/docs/clusters.md](clusters.md).
 
+<a name="search-results"></a>
 
 When indicating paging parameters (`page`, `per_page`), a restriction takes
 effect: the number of results returned can't exceed 2000. For instance, a
@@ -1094,3 +1097,16 @@ min_length | integer | Min length of text field.
 max_length | integer | Max length of text field.
 min_count | integer | Min number of objects for the fields with list transferring.
 max_count | integer or `null` | Max number of objects for the fields with list transferring. `null` – the number is not limited.
+
+<a name="similar"></a>
+## Similar vacancies
+
+### Request
+
+`GET /vacancies/{vacancy_id}/similar_vacancies`
+
+where `vacancy_id` – ID of the vacancy.
+
+Accepts the same parameters as [vacancy search](#search-params) and returns same results as [vacancy search](#search-results)
+
+Additionally if vacancy with `vacancy_id` does not exist `404 Not Found` will be returned in response.
